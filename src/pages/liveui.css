@@ -1,0 +1,119 @@
+/* Custom Live UI page */
+.live-page { --live-navy: #041638; --live-cyan: #3ec8ff; background: var(--live-navy); color: #fff; }
+
+.live-hero-shade {
+  background:
+    linear-gradient(180deg, rgba(4, 22, 56, .25) 0%, rgba(4, 22, 56, 0) 40%, rgba(4, 22, 56, .55) 100%),
+    linear-gradient(90deg, rgba(4, 22, 56, .1) 0%, rgba(4, 22, 56, .45) 100%);
+}
+
+/* Voice-message bubble, white like the chat screenshots */
+.live-bubble { background: #fff; border-radius: 6px; box-shadow: 0 8px 24px rgba(0, 8, 30, .35); }
+
+/* Voice message in the chat style: tailed bubble, speaker arcs that play in sequence, duration */
+.live-voice {
+  position: relative; display: flex; align-items: center; gap: .55rem; width: 9.5rem; padding: .62rem .9rem;
+  background: #fff; color: #222; border-radius: 6px; font-size: .95rem; line-height: 1;
+  box-shadow: 0 8px 24px rgba(0, 8, 30, .35);
+}
+.live-voice::before {
+  content: ''; position: absolute; left: -6px; top: 50%; width: 12px; height: 12px; translate: 0 -50%; rotate: 45deg;
+  background: #fff; border-radius: 2px;
+}
+.live-voice-ico { position: relative; width: 1.35rem; height: 1.35rem; flex: none; color: #222; }
+.live-voice-ico path { opacity: .25; animation: live-voice 1.2s ease-in-out infinite; }
+.live-voice-ico .v2 { animation-delay: .2s; }
+.live-voice-ico .v3 { animation-delay: .4s; }
+@keyframes live-voice { 0%, 100% { opacity: .2; } 40%, 60% { opacity: 1; } }
+.live-voice span { font-variant-numeric: tabular-nums; letter-spacing: .02em; }
+
+.live-evo .live-frame { max-width: 52rem; margin-inline: auto; }
+
+.live-float { animation: live-float 7s ease-in-out infinite; }
+@keyframes live-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+
+/* Ornate section bar after the reference: chamfered double outline, crescent end-caps, hairline rule beneath */
+.live-titlewrap { position: relative; display: flex; align-items: center; padding: 0 3.4rem; }
+.live-titlebar {
+  position: relative; flex: 1; padding: 1.3rem 1.6rem; z-index: 0;
+  background: #3f6fd2;
+  clip-path: polygon(14px 0, calc(100% - 14px) 0, 100% 14px, 100% calc(100% - 14px), calc(100% - 14px) 100%, 14px 100%, 0 calc(100% - 14px), 0 14px);
+}
+.live-titlebar::before {
+  content: ''; position: absolute; inset: 1px; z-index: -1;
+  background: linear-gradient(90deg, #0d2a68, #071b48);
+  clip-path: polygon(13px 0, calc(100% - 13px) 0, 100% 13px, 100% calc(100% - 13px), calc(100% - 13px) 100%, 13px 100%, 0 calc(100% - 13px), 0 13px);
+}
+.live-titlebar::after {
+  content: ''; position: absolute; inset: 5px; z-index: -1; border: 1px solid rgba(110, 160, 255, .28);
+  clip-path: polygon(10px 0, calc(100% - 10px) 0, 100% 10px, 100% calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 0 calc(100% - 10px), 0 10px);
+}
+.live-cap {
+  position: absolute; top: 50%; width: 3.6rem; height: 6rem; translate: 0 -50%;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 100'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23d6e4ff'/><stop offset='1' stop-color='%234677e0'/></linearGradient></defs><path d='M52 3 A47 47 0 1 0 52 97 A72 72 0 0 1 52 3 Z' fill='url(%23g)'/><path d='M57 14 A36 36 0 1 0 57 86' fill='none' stroke='%237ea6ff' stroke-width='1.6' stroke-linecap='round'/></svg>") center / contain no-repeat;
+  filter: drop-shadow(0 0 7px rgba(110, 160, 255, .85));
+}
+.live-cap-l { left: 0; }
+.live-cap-r { right: 0; transform: scaleX(-1); }
+.live-rule { height: 1px; margin-top: 1.4rem; background: linear-gradient(90deg, transparent, rgba(110, 160, 255, .6) 12%, rgba(110, 160, 255, .6) 88%, transparent); }
+.live-title-ghost { color: rgba(255, 255, 255, .4); }
+
+.live-evo { max-width: 64rem; margin-inline: auto; }
+.live-evo img {
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent), linear-gradient(180deg, transparent, #000 8%, #000 92%, transparent);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent), linear-gradient(180deg, transparent, #000 8%, #000 92%, transparent);
+  mask-composite: intersect;
+}
+
+/* Refinement: thin double-line frame with gradient rim, drifting sheen, glow, centre gem on the rule */
+.live-titlewrap { filter: drop-shadow(0 0 16px rgba(60, 110, 255, .28)); }
+.live-titlebar { padding: .9rem 1.8rem 1.1rem; background: linear-gradient(90deg, #7fa9f5, #3f6fd2 20%, #2b55b3 60%, #5f8ee6); }
+.live-titlebar::before {
+  background:
+    linear-gradient(100deg, transparent 42%, rgba(150, 195, 255, .14) 50%, transparent 58%) 0 0 / 260% 100% no-repeat,
+    linear-gradient(90deg, #0a2258, #06183f 70%, #051438);
+  animation: live-sheen 7s ease-in-out infinite;
+}
+.live-titlebar .live-title-ghost { margin-top: -.3em; position: relative; left: 1.6rem; }
+@keyframes live-sheen { 0% { background-position: 130% 0, 0 0; } 60%, 100% { background-position: -30% 0, 0 0; } }
+.live-titlebar h2 { letter-spacing: .06em; text-shadow: 0 0 18px rgba(120, 170, 255, .55); }
+.live-title-ghost { letter-spacing: .12em; }
+.live-cap { animation: live-cap 4s ease-in-out infinite; }
+@keyframes live-cap { 50% { filter: drop-shadow(0 0 13px rgba(140, 185, 255, 1)); } }
+.live-rule { position: relative; }
+.live-rule::after {
+  content: ''; position: absolute; left: 50%; top: 50%; width: 9px; height: 9px; translate: -50% -50%; rotate: 45deg;
+  background: #9cc3ff; box-shadow: 0 0 12px 2px rgba(110, 160, 255, .8);
+}
+
+/* Rounded image well whose own background matches the artwork so the caption sits inside the frame */
+.live-frame { overflow: hidden; border-radius: 22px; background: #061636; border: 1px solid rgba(98, 156, 255, .25); }
+
+.live-moon-stage { isolation: isolate; }
+.live-moon { filter: drop-shadow(0 0 28px rgba(255, 200, 150, .45)); animation: live-glow 5s ease-in-out infinite; }
+@keyframes live-glow { 50% { filter: drop-shadow(0 0 44px rgba(255, 214, 170, .75)); } }
+.live-sea {
+  position: absolute; inset: auto -6% -4% -6%; height: 34%; z-index: -1;
+  background: radial-gradient(60% 70% at 50% 100%, rgba(40, 190, 255, .75), rgba(20, 90, 220, .25) 55%, transparent 75%);
+  filter: blur(14px);
+}
+
+.live-panel {
+  border: 1px solid rgba(98, 156, 255, .35);
+  border-radius: 24px;
+  background: rgba(10, 36, 90, .35);
+  box-shadow: inset 0 0 30px rgba(60, 120, 255, .12);
+}
+.live-final { background: linear-gradient(180deg, var(--live-navy), #020d26); }
+
+.live-twinkle {
+  position: absolute; width: 10px; height: 10px; border-radius: 50%;
+  background: radial-gradient(circle, #fff 0%, rgba(255, 236, 190, .9) 35%, transparent 70%);
+  animation: live-twinkle 3.2s ease-in-out infinite;
+}
+@keyframes live-twinkle { 0%, 100% { opacity: .15; transform: scale(.6); } 50% { opacity: 1; transform: scale(1.6); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .live-float, .live-moon, .live-twinkle, .live-titlebar::before, .live-cap, .live-voice-ico path { animation: none; }
+}

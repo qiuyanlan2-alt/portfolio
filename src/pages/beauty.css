@@ -1,0 +1,108 @@
+.beauty-page { background: #050505; color: #fff; --beauty-pink: #e8b8c3; }
+.beauty-page button, .beauty-page input { cursor: pointer; }
+.beauty-page :focus-visible { outline: 2px solid var(--beauty-pink); outline-offset: 5px; }
+.beauty-wrap { max-width: 1200px; margin: auto; padding-inline: 40px; }
+.beauty-hero { height: min(880px, 90vw); min-height: 620px; position: relative; background: #d4c7cc; overflow: hidden; }
+.beauty-hero-photo { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
+.beauty-hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, #24171d40, transparent 45%, #24171d38); pointer-events: none; }
+.beauty-hero-top { position: absolute; z-index: 1; inset: 48px 5% auto; display: flex; justify-content: space-between; gap: 24px; }
+.beauty-back { font-size: 12px; letter-spacing: .14em; display: inline-block; padding-bottom: 38px; }
+.beauty-hero h1 { font-size: clamp(36px, 4.8vw, 74px); font-weight: 900; line-height: 1.2; letter-spacing: -.045em; }
+.beauty-subtitle { font-size: clamp(20px, 2.8vw, 40px); font-weight: 700; margin-top: 14px; }
+.beauty-kicker { font-size: 12px; letter-spacing: .12em; line-height: 1.6; }
+.beauty-hero .beauty-kicker { margin-top: 14px; }
+.beauty-number { font-size: clamp(80px, 10vw, 152px); font-weight: 800; line-height: .9; letter-spacing: -.07em; }
+.beauty-number span { font-size: 24px; line-height: 1.25; letter-spacing: -.02em; display: block; margin-top: 22px; }
+.beauty-hero-action { position: absolute; z-index: 1; left: 5%; bottom: 100px; border: 1px solid #ffffffa8; border-radius: 40px; padding: 15px 24px; backdrop-filter: blur(12px); background: #271c2430; }
+.beauty-hero-action span { margin-left: 40px; }
+.beauty-hero-credit { position: absolute; right: 5%; bottom: 110px; font-size: 11px; letter-spacing: .12em; z-index: 1; }
+.beauty-body { position: relative; margin-top: -48px; border-radius: 48px 48px 0 0; background: #050505; }
+.beauty-intro { padding-block: 64px 110px; display: grid; grid-template-columns: .55fr 1.2fr 1.2fr; gap: 40px; align-items: start; }
+.beauty-intro > span { color: var(--beauty-pink); }
+.beauty-intro > p { font-size: 28px; font-weight: 600; line-height: 1.6; }
+.beauty-intro > div { color: #aaa; font-size: 14px; line-height: 2; }
+.beauty-section-title { border-bottom: 1px solid #383838; padding-bottom: 30px; position: relative; }
+.beauty-section-title > span { font-size: 11px; letter-spacing: .16em; color: var(--beauty-pink); }
+.beauty-section-title h2 { font-size: clamp(28px, 4vw, 52px); font-weight: 800; line-height: 1.4; margin-top: 18px; letter-spacing: -.04em; }
+.beauty-section-title > p { font-size: clamp(20px, 3.6vw, 46px); font-weight: 700; color: #454545; line-height: 1; letter-spacing: -.035em; }
+.beauty-assets-feature { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; padding-block: 70px 40px; }
+.beauty-assets-feature img { height: 250px; width: 100%; object-fit: contain; }
+.beauty-assets-feature figcaption { text-align: center; color: #aaa; font-size: 11px; letter-spacing: .14em; margin-top: 24px; }
+.beauty-flow { text-align: center; font-size: clamp(17px, 2.6vw, 30px); font-weight: 600; padding: 36px 0 60px; }
+.beauty-flow span { color: var(--beauty-pink); margin-inline: 16px; }
+.beauty-texture-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; background: #242424; border: 1px solid #242424; }
+.beauty-texture-grid figure { background: #0b0b0b; padding: 24px 16px; text-align: center; }
+.beauty-texture-grid img { height: 100px; width: 100%; object-fit: contain; margin-bottom: 22px; }
+.beauty-texture-grid figcaption { font-size: 13px; }
+.beauty-texture-grid small { display: block; color: #888; font-size: 9px; letter-spacing: .1em; margin-top: 7px; }
+.beauty-studio { padding-block: 120px 40px; scroll-margin-top: 90px; }
+.beauty-studio-heading { display: flex; justify-content: space-between; gap: 24px; align-items: center; margin-block: 30px; }
+.beauty-studio-heading > p { color: #aaa; font-size: 13px; }
+.beauty-mode { display: flex; border: 1px solid #444; border-radius: 30px; padding: 4px; flex-shrink: 0; }
+.beauty-mode button { padding: 10px 18px; font-size: 12px; border-radius: 24px; color: #aaa; }
+.beauty-mode button[aria-pressed=true] { background: var(--beauty-pink); color: #20181b; }
+.beauty-workbench { display: grid; grid-template-columns: 1fr .85fr; gap: 48px; align-items: start; scroll-margin-top: 90px; }
+.beauty-compare { position: relative; aspect-ratio: 457 / 640; overflow: hidden; border-radius: 24px; background: #282125; isolation: isolate; scroll-margin-top: 90px; }
+.beauty-face { width: 100%; height: 100%; object-fit: fill; }
+.beauty-result { position: absolute; inset: 0; pointer-events: none; }
+.beauty-layer { position: absolute; max-width: none; object-fit: fill; }
+.beauty-photo-label { position: absolute; top: 20px; padding: 7px 12px; background: #17121670; border-radius: 20px; font-size: 10px; letter-spacing: .1em; }
+.beauty-photo-label.before { left: 16px; }
+.beauty-photo-label.after { right: 16px; }
+.beauty-divider { position: absolute; top: 0; bottom: 0; width: 1px; background: #fff; transform: translateX(-50%); pointer-events: none; }
+.beauty-divider span { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); border: 1px solid #fff; background: #ffffffd9; border-radius: 50%; color: #222; width: 44px; height: 44px; display: grid; place-items: center; font-size: 22px; }
+.beauty-photo-range { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; touch-action: pan-y; }
+.beauty-compare:focus-within { outline: 2px solid var(--beauty-pink); outline-offset: 4px; }
+.beauty-comparison-control { display: block; font-size: 12px; margin-top: 22px; }
+.beauty-page output { float: right; color: var(--beauty-pink); font-variant-numeric: tabular-nums; }
+.beauty-page input[type=range]:not(.beauty-photo-range) { display: block; width: 100%; accent-color: var(--beauty-pink); margin-block: 14px; }
+.beauty-note { font-size: 12px; color: #aaa; line-height: 1.9; margin-top: 16px; }
+.beauty-controls { border-top: 1px solid #444; padding-top: 22px; }
+.beauty-controls-title { display: flex; justify-content: space-between; font-size: 11px; color: #aaa; letter-spacing: .06em; margin-bottom: 22px; gap: 12px; }
+.beauty-palette { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.beauty-palette button { border: 1px solid #333; display: flex; align-items: center; gap: 10px; padding: 12px; font-size: 12px; min-height: 68px; text-align: left; border-radius: 10px; }
+.beauty-palette button[aria-pressed=true] { background: #e8b8c312; border-color: #ad7787; }
+.beauty-palette button.selected { box-shadow: inset 0 0 0 1px var(--beauty-pink); }
+.beauty-palette img { width: 44px; height: 38px; object-fit: contain; }
+.beauty-palette b { margin-left: auto; color: var(--beauty-pink); font-size: 18px; font-weight: 400; }
+.beauty-adjust { padding: 24px 0; }
+.beauty-adjust > div { display: flex; justify-content: space-between; margin-bottom: 24px; font-size: 14px; }
+.beauty-adjust button { font-size: 12px; color: var(--beauty-pink); text-decoration: underline; }
+.beauty-adjust label { display: block; font-size: 12px; margin-top: 18px; }
+.beauty-adjust summary { color: #aaa; font-size: 12px; cursor: pointer; padding-top: 10px; }
+.beauty-preset { width: 100%; background: var(--beauty-pink); color: #231a1d; padding: 16px; border-radius: 8px; font-size: 13px; font-weight: 600; }
+.beauty-reset { width: 100%; padding: 18px; font-size: 12px; color: #aaa; text-decoration: underline; }
+.beauty-controls fieldset:disabled { opacity: .4; }
+.beauty-controls fieldset:disabled button, .beauty-controls fieldset:disabled input { cursor: not-allowed; }
+.beauty-end { text-align: center; padding-top: 90px; }
+.beauty-end > p { font-size: clamp(28px, 4vw, 48px); font-weight: 600; line-height: 1.7; }
+.beauty-end > p span { color: var(--beauty-pink); }
+.beauty-end small { display: block; margin: 40px 0 70px; font-size: 10px; letter-spacing: .12em; color: #999; }
+.beauty-end nav { border-top: 1px solid #333; padding: 28px 0; display: flex; justify-content: space-between; gap: 20px; font-size: 12px; }
+@media (max-width: 760px) {
+  .beauty-wrap { padding-inline: 22px; }
+  .beauty-hero { min-height: 650px; height: 85svh; max-height: 850px; }
+  .beauty-hero-photo { object-position: 53% center; }
+  .beauty-hero-top { inset: 42px 22px auto; gap: 8px; }
+  .beauty-back { padding-bottom: 24px; font-size: 10px; }
+  .beauty-hero h1 { font-size: clamp(27px, 6vw, 44px); }
+  .beauty-number { font-size: 64px; }
+  .beauty-number span { font-size: 13px; margin-top: 12px; }
+  .beauty-subtitle { font-size: 18px; }
+  .beauty-hero .beauty-kicker { font-size: 9px; }
+  .beauty-hero-credit { display: none; }
+  .beauty-body { border-radius: 30px 30px 0 0; margin-top: -30px; }
+  .beauty-intro { grid-template-columns: 1fr; gap: 20px; padding-block: 42px 64px; }
+  .beauty-assets-feature { gap: 12px; padding-block: 38px 20px; }
+  .beauty-assets-feature img { height: 150px; }
+  .beauty-assets-feature figcaption { font-size: 8px; letter-spacing: 0; }
+  .beauty-flow { padding-block: 24px 36px; }
+  .beauty-flow span { margin-inline: 5px; }
+  .beauty-texture-grid { grid-template-columns: repeat(2, 1fr); }
+  .beauty-studio { padding-top: 70px; }
+  .beauty-studio-heading { align-items: start; flex-direction: column; gap: 20px; }
+  .beauty-workbench { grid-template-columns: 1fr; gap: 28px; }
+  .beauty-controls { padding-top: 20px; }
+  .beauty-end { padding-top: 60px; }
+  .beauty-end nav { font-size: 10px; gap: 10px; }
+}

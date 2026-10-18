@@ -1,0 +1,113 @@
+/* KORA 404 page */
+.kora-page { --k-gold: #d8b25e; --k-gold-2: #f3dc9a; --k-line: rgba(216, 178, 94, .28); background: #0c0c0d; color: #eee8d8; }
+
+.kora-head { background: var(--paper, #f4f1ec); color: #111; padding: 2rem 0 2.6rem; }
+.kora-back { display: inline-block; border: 2px solid #111; padding: .25rem .75rem; font: 400 .72rem 'Archivo Black', sans-serif; letter-spacing: .16em; }
+.kora-back:hover { background: #111; color: #f4f1ec; }
+.kora-head-grid { margin-top: 1.4rem; display: grid; grid-template-columns: 1fr auto; gap: 2rem; }
+.kora-h1 { font: 400 clamp(3rem, 8.5vw, 8rem)/.95 'Noto Sans SC', 'Archivo Black', sans-serif; letter-spacing: -.03em; }
+.kora-sub { margin-top: .6rem; font-size: clamp(1.3rem, 3.6vw, 3rem); font-weight: 300; }
+.kora-chapters { margin-top: clamp(1.4rem, 3vw, 3rem); font-size: clamp(.95rem, 2.3vw, 2rem); font-weight: 300; letter-spacing: .01em; }
+.kora-chapters a { transition: color .25s; }
+.kora-chapters a:hover { color: #e0222d; }
+.kora-head-side { display: flex; flex-direction: column; justify-content: space-between; text-align: right; font-size: clamp(.85rem, 1.7vw, 1.5rem); line-height: 1.35; }
+.kora-tag { font-weight: 500; }
+
+.kora-hero { position: relative; overflow: hidden; background: #000; }
+.kora-hero > img { display: block; width: 100%; height: auto; transform-origin: 50% 40%; will-change: transform; }
+.kora-hero-shine {
+  position: absolute; inset: 0; pointer-events: none; mix-blend-mode: soft-light;
+  background: linear-gradient(105deg, transparent 38%, rgba(255, 225, 150, .55) 50%, transparent 62%);
+  transform: translateX(-120%); animation: kora-shine 7s ease-in-out 1.2s infinite;
+}
+@keyframes kora-shine { 0% { transform: translateX(-120%); } 45%, 100% { transform: translateX(120%); } }
+
+/* Fade the key art into the black below instead of cutting off at a hard edge */
+.kora-hero::after {
+  content: ''; position: absolute; inset: auto 0 -1px 0; height: 38%; pointer-events: none;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, .55) 45%, rgba(0, 0, 0, .9) 80%, #000 100%);
+}
+
+.kora-frame-section { background: linear-gradient(180deg, #000 0%, #0b0d0c 100%); padding: clamp(2.5rem, 6vw, 6rem) 1rem; }
+.kora-frame-wrap { margin: 0 auto; width: min(78rem, 100%); }
+.kora-frame-btn { position: relative; display: block; width: 100%; filter: drop-shadow(0 0 30px rgba(216, 150, 60, .25)); transition: filter .5s, transform .5s; }
+.kora-frame-btn:hover { filter: drop-shadow(0 0 46px rgba(240, 180, 80, .55)); transform: scale(1.012); }
+.kora-frame-btn img { display: block; width: 100%; }
+.kora-play {
+  position: absolute; left: 50%; top: 50%; width: clamp(3.6rem, 9vw, 5.5rem); aspect-ratio: 1; translate: -50% -50%;
+  display: flex; align-items: center; justify-content: center; border-radius: 50%;
+  border: 5px solid rgba(255, 255, 255, .92); background: rgba(255, 255, 255, .12); backdrop-filter: blur(3px);
+  animation: kora-pulse 2.4s ease-out infinite;
+}
+.kora-play svg { width: 42%; margin-left: 8%; fill: #fff; }
+@keyframes kora-pulse { 0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, .5); } 70%, 100% { box-shadow: 0 0 0 22px rgba(255, 255, 255, 0); } }
+
+.kora-dark { position: relative; isolation: isolate; overflow: hidden; background: linear-gradient(180deg, #0d0d0e, #141414 40%, #0e0e0f); padding: clamp(3rem, 6vw, 6rem) 0 clamp(4rem, 8vw, 8rem); }
+.kora-skeleton { position: absolute; left: 50%; top: 4%; z-index: -1; width: min(48rem, 90vw); translate: -50% 0; opacity: .22; pointer-events: none; }
+.kora-swirl { position: absolute; right: 2%; bottom: 6%; z-index: -1; width: clamp(6rem, 14vw, 13rem); opacity: .5; pointer-events: none; }
+
+.kora-block { position: relative; margin: 0 auto; width: min(76rem, 100% - 2rem); padding: clamp(2.5rem, 5vw, 5rem) 0; }
+.kora-title-row { display: flex; align-items: flex-end; gap: 1.2rem; }
+.kora-title-row > i { flex: 1; height: 1px; margin-bottom: .8rem; background: linear-gradient(90deg, var(--k-line), transparent); }
+.kora-title-world { height: clamp(3.6rem, 8vw, 6.4rem); width: auto; }
+.kora-title-font { height: clamp(5rem, 11vw, 9rem); width: auto; margin-bottom: -1.4rem; }
+.kora-gold-title { display: flex; align-items: baseline; font-family: 'Playfair Display', serif; line-height: .9; }
+.kora-gold-first, .kora-gold-rest {
+  background: linear-gradient(180deg, #fff0bd 0%, #e2b252 45%, #8f5e1c 100%); -webkit-background-clip: text; background-clip: text; color: transparent;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, .6));
+}
+.kora-gold-first { font-size: clamp(4.5rem, 10vw, 8rem); font-weight: 900; }
+.kora-gold-rest { font-size: clamp(2.6rem, 6vw, 5rem); font-weight: 500; }
+
+.kora-copy { margin-top: 1.6rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2.4rem; max-width: 62rem; font-size: .88rem; line-height: 2; color: #cfc9b8; }
+.kora-copy-one { display: block; }
+
+.kora-logos { margin-top: clamp(2.5rem, 5vw, 4.5rem); display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; text-align: center; }
+.kora-logo-art { display: flex; align-items: center; justify-content: center; height: clamp(11rem, 20vw, 17rem); }
+.kora-logo-art img { max-width: 92%; max-height: 100%; object-fit: contain; transition: transform .6s cubic-bezier(.22, 1, .36, 1), filter .5s; }
+.kora-logo:hover .kora-logo-art img { transform: scale(1.07); filter: drop-shadow(0 0 22px rgba(232, 190, 100, .55)); }
+.kora-logo figcaption { margin-top: 1rem; display: flex; flex-direction: column; gap: .2rem; }
+.kora-logo strong { font-size: clamp(1.1rem, 2vw, 1.6rem); font-weight: 700; color: #e6e2d6; }
+.kora-logo span { color: #8f8d85; font-size: .9rem; }
+
+.kora-symbols { margin-top: clamp(2.5rem, 5vw, 4.5rem); }
+.kora-symbols img { width: 100%; display: block; opacity: .95; }
+
+.kora-letters { position: relative; margin-top: 2rem; overflow: hidden; }
+.kora-letters img { display: block; width: 100%; }
+.kora-letters-shine {
+  position: absolute; inset: 0; pointer-events: none; mix-blend-mode: overlay;
+  background: linear-gradient(100deg, transparent 40%, rgba(255, 244, 200, .9) 50%, transparent 60%);
+  transform: translateX(-120%); animation: kora-shine 6s ease-in-out infinite;
+}
+
+.kora-roles { margin-top: 2rem; display: flex; flex-direction: column; gap: clamp(1rem, 3vw, 3rem); }
+.kora-role { position: relative; overflow: hidden; }
+.kora-role img { position: relative; display: block; width: 100%; transition: transform .8s cubic-bezier(.22, 1, .36, 1), filter .6s; }
+.kora-role:hover img { transform: scale(1.025); filter: drop-shadow(0 0 28px rgba(216, 178, 94, .3)); }
+.kora-ghost {
+  position: absolute; left: 50%; top: 50%; translate: -50% -50%; white-space: nowrap; pointer-events: none;
+  font: 900 clamp(5rem, 17vw, 15rem)/1 'Playfair Display', serif; letter-spacing: .02em; color: rgba(255, 255, 255, .045);
+}
+/* Caption sits under the art so it never covers a character */
+.kora-role figcaption { position: relative; margin-top: .9rem; display: flex; flex-direction: column; align-items: center; text-align: center; font-size: .8rem; }
+.kora-role figcaption b { font: 400 .8rem 'Playfair Display', serif; letter-spacing: .08em; color: var(--k-gold-2); }
+.kora-role figcaption span { color: #aaa69a; }
+
+.kora-next { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--k-line); background: #070707; }
+.kora-next a { padding: 2rem; transition: background .3s; }
+.kora-next a:last-child { text-align: right; border-left: 1px solid var(--k-line); }
+.kora-next a:hover { background: rgba(216, 178, 94, .12); }
+.kora-next small { display: block; font: 400 .65rem 'Archivo Black', sans-serif; letter-spacing: .2em; color: var(--k-gold); }
+.kora-next b { display: block; margin-top: .5rem; font-size: 1.5rem; }
+
+@media (max-width: 760px) {
+  .kora-copy { grid-template-columns: 1fr; gap: 1rem; }
+  .kora-logos { grid-template-columns: 1fr; }
+
+  .kora-next { grid-template-columns: 1fr; }
+  .kora-next a:last-child { border-left: 0; border-top: 1px solid var(--k-line); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .kora-hero-shine, .kora-letters-shine, .kora-play { animation: none; }
+}

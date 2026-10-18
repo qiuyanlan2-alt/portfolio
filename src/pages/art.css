@@ -1,0 +1,53 @@
+/* 是插画 / Poems of the Sea */
+.art-page {
+  --a-red: #d6322c; --a-blue: #2c4a6e; --a-sky: #9db9c6; --a-cream: #efe6d2;
+  background: var(--a-cream); color: #1b1b1f; overflow-x: clip;
+  background-image:
+    radial-gradient(rgba(60, 40, 20, .06) 1px, transparent 1.2px),
+    radial-gradient(rgba(60, 40, 20, .035) 1px, transparent 1.2px);
+  background-size: 7px 7px, 13px 13px; background-position: 0 0, 3px 5px;
+}
+
+.art-progress { position: fixed; left: 0; right: 0; top: 0; z-index: 70; height: 3px; transform-origin: 0 50%; background: var(--a-red); }
+
+/* Paper cards pinned with tape, like pages of a travel journal */
+.art-card {
+  position: relative; background: #fffdf8; padding: .7rem;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, .06), 0 14px 30px rgba(60, 40, 20, .22);
+  transition: transform .6s cubic-bezier(.22, 1, .36, 1), box-shadow .5s;
+}
+.art-card img { display: block; width: 100%; }
+.art-card:hover { transform: rotate(0deg) translateY(-8px) scale(1.015) !important; box-shadow: 0 2px 0 rgba(0, 0, 0, .06), 0 26px 44px rgba(60, 40, 20, .3); }
+.art-tape {
+  position: absolute; z-index: 2; width: 9rem; height: 2.5rem; top: -1.3rem; left: 50%; translate: -50% 0; rotate: -3deg;
+  background: repeating-linear-gradient(115deg, rgba(214, 50, 44, .82) 0 7px, rgba(255, 253, 248, .85) 7px 14px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .18); opacity: .92;
+}
+.art-zoom { cursor: zoom-in; display: block; width: 100%; }
+
+/* Handwritten quotes are black ink on white: multiply drops the white into the paper tone */
+.art-ink { mix-blend-mode: multiply; display: block; width: 100%; }
+
+.art-swatch { display: inline-block; width: 1.1rem; height: 1.1rem; border-radius: 50%; box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .15); }
+
+.art-float { animation: art-float 8s ease-in-out infinite; }
+.art-float-b { animation: art-float 10s ease-in-out -3s infinite; }
+@keyframes art-float { 0%, 100% { translate: 0 0; rotate: -1deg; } 50% { translate: 0 -14px; rotate: 1.2deg; } }
+
+.art-blob { position: absolute; border-radius: 50%; filter: blur(2px); z-index: -1; }
+
+.art-ink-link { background: linear-gradient(var(--a-red), var(--a-red)) 0 100% / 0 2px no-repeat; transition: background-size .4s; }
+.art-ink-link:hover { background-size: 100% 2px; }
+
+@media (prefers-reduced-motion: reduce) { .art-float, .art-float-b { animation: none; } }
+
+/* Frameless old paper: the print keeps its own worn edges, only a soft shadow lifts it off the page */
+.art-bare { position: relative; transition: transform .6s cubic-bezier(.22, 1, .36, 1); }
+.art-bare img { display: block; width: 100%; filter: drop-shadow(0 12px 18px rgba(40, 60, 80, .28)); }
+.art-bare:hover { transform: rotate(0deg) translateY(-6px) !important; }
+.art-tape-blue {
+  position: absolute; z-index: 2; left: 40%; top: -4.2rem; width: 4.6rem; height: 8.4rem; rotate: 16deg; pointer-events: none;
+  background: linear-gradient(160deg, #62b4ee, #3f93d8); opacity: .93; border-radius: 2px;
+  clip-path: polygon(0 4%, 12% 0, 30% 3%, 52% 0, 74% 3%, 100% 0, 100% 100%, 82% 97%, 60% 100%, 38% 96%, 16% 100%, 0 96%);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
+}
