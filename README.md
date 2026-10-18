@@ -1,4 +1,4 @@
-# 邱彦岚 · 交互式作品集
+#  交互式作品集
 
 React 18 + TypeScript + Vite + Tailwind CSS + Framer Motion + React Router。
 
